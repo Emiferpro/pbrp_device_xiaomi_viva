@@ -35,21 +35,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # TODO: Virtual A/B partitions found on viva's full OTA payload.
 ENABLE_VIRTUAL_AB := true
 
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    lk \
-    preloader \
-    product \
-    system \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vendor \
-    vendor_boot
-
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
