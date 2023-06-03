@@ -2,7 +2,6 @@ import /init.microtrust.rc
 
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
-    start boot-hal-1-2
 
 on post-fs
     # Support A/B feature for EMMC and UFS boot region
@@ -29,7 +28,7 @@ on post-fs
 	start mtk.plpath.utils.link
 	
 on fs
-	chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/f0_save
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/f0_save
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/osc_save
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/3-005a/osc_save
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/custom_wave
@@ -47,7 +46,7 @@ on fs
     chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/custom_wave
     chmod 0666  /sys/bus/i2c/drivers/aw8624_haptic/6-005a/custom_wave
 
-on fs
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 	
 service keystore /system/bin/keystore /tmp/misc/keystore
