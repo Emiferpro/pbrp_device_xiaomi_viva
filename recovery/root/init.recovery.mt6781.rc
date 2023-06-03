@@ -5,7 +5,6 @@ on init
     start boot-hal-1-2
 
 on post-fs
-    on post-fs
     # Support A/B feature for EMMC and UFS boot region
     wait /dev/block/mmcblk0boot0 2
     symlink /dev/block/sda /dev/block/mmcblk0boot0
@@ -29,7 +28,7 @@ on post-fs
 	
 	start mtk.plpath.utils.link
 	
-on fs	
+on fs
 	chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/f0_save
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/osc_save
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/3-005a/osc_save
